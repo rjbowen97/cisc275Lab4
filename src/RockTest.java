@@ -27,7 +27,17 @@ public class RockTest {
 		int obtainedY = testRock.getY();
 		
 		assertEquals(0, obtainedY);
-		
+	}
+	
+	@Test
+	public void testMoveRock() {
+		testRock.moveRock();
+		assertEquals(0 + 1,testRock.getY());
+	}
+	
+	@Test
+	public void testToString() {
+		assertEquals("O", testRock.toString());
 	}
 
 }
