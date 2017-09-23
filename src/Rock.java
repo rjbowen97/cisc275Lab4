@@ -22,14 +22,13 @@ public class Rock {
 		return this.yCoord;
 	}
 	
-	private void setxCoord(int xCoord) {
+	void setxCoord(int xCoord) {
 		this.xCoord = xCoord;
 	}
 
 	private void setyCoord(int yCoord) {
 		this.yCoord = yCoord;
 	}
-	
 	
 	public void moveRock() {
 		this.setyCoord(this.getY() + 1);

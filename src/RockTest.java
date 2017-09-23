@@ -40,4 +40,10 @@ public class RockTest {
 		assertEquals("O", testRock.toString());
 	}
 
+	@Test
+	public void testSetXCoord() {
+		testRock.setxCoord(3);
+		assertEquals(3, testRock.getX());
+	}
+	
 }
