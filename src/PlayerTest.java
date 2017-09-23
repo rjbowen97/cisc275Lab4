@@ -6,10 +6,10 @@ import org.junit.Test;
 
 public class PlayerTest {
 
-	WaitForCharThread waitForCharThread = new WaitForCharThread();
+	Player player = new Player(3, 8);
 
-	@Test(expected = IOException.class)
-	public void testRun() {
-		waitForCharThread.run();
+	@Test
+	public void testGetX() {
+		
 	}
 }
