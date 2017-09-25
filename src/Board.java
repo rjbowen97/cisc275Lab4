@@ -14,6 +14,8 @@ class Board{
 	private static StringBuilder[] screen;
 	private static StringBuilder buffer;
 
+	
+	//carson's commit
 	Board(int hard){
 		timer = 150;
 		difficulty = hard;
