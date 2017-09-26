@@ -18,12 +18,40 @@ public class BoardTest {
 	protected int timr = 150;
 	private int x_y = 20;
 	protected Player orig_player = new Player(x_y, x_y);
-	Board test_board = new Board(dif);
 	
-
+	@Test
+	public void test_takeTurnInput_o() {
+		Board test_board = new Board(dif);
+		
+		int preMoveX = test_board.player.getX();
+		test_board.takeTurn('o');
+		assertEquals(preMoveX, test_board.player.getX() + 1);
+		
+	}
+	
+	@Test
+	public void test_takeTurnInput_p() {
+		Board test_board = new Board(dif);
+		
+		int preMoveX = test_board.player.getX();
+		test_board.takeTurn('p');
+		assertEquals(preMoveX, test_board.player.getX() - 1);
+	}
+	
+	@Test
+	public void test_takeTurnInput_k() {
+		Board test_board = new Board(dif);
+		
+		int preTurnScore = test_board.player.getScore();
+		test_board.takeTurn('k');
+		assertEquals(preTurnScore, test_board.player.getScore() - 1);
+	}
+	
 	@Test
 	public void test_easy() {
+		
 		Board test_board = new Board(dif);
+		
 		assertEquals(test_board.difficulty, dif);
 		assertFalse(test_board.lost);
 		assertEquals(test_board.timer, timr);
@@ -37,23 +65,15 @@ public class BoardTest {
 		test_board.processChar('o');
 		assertEquals(test_board.player.getX(), orig_player.getX() - 1);
 
+		//testing moveRight()
 		test_board.processChar('p');
 		assertEquals(test_board.player.getX(), orig_player.getX());
-
-		// testing to walls
-		test_board.processChar('o');
-		
-		for (int i = 0; i < 60; i++) {
-			test_board.processChar('p');
-		}
-
-		// test upScore()
-		test_board.processChar('k');
-
 	}
 	
 	@Test
 	public void test_scoringTierZero() {
+		
+		Board test_board = new Board(dif);
 		
 		System.setOut(new PrintStream(outContent));
 		
@@ -64,6 +84,7 @@ public class BoardTest {
 	
 	@Test
 	public void test_scoringTierOne() {
+		Board test_board = new Board(dif);
 		
 		System.setOut(new PrintStream(outContent));
 		
@@ -74,6 +95,7 @@ public class BoardTest {
 	
 	@Test
 	public void test_scoringTierTwo() {
+		Board test_board = new Board(dif);
 		
 		System.setOut(new PrintStream(outContent));
 		
@@ -84,6 +106,7 @@ public class BoardTest {
 	
 	@Test
 	public void test_scoringTierThree() {
+		Board test_board = new Board(dif);
 		
 		System.setOut(new PrintStream(outContent));
 		
@@ -94,6 +117,7 @@ public class BoardTest {
 	
 	@Test
 	public void test_scoringTierFour() {
+		Board test_board = new Board(dif);
 		
 		System.setOut(new PrintStream(outContent));
 		
@@ -104,6 +128,7 @@ public class BoardTest {
 	
 	@Test
 	public void test_scoringTierFive() {
+		Board test_board = new Board(dif);
 		
 		System.setOut(new PrintStream(outContent));
 		
@@ -114,6 +139,7 @@ public class BoardTest {
 	
 	@Test
 	public void test_scoringTierSix() {
+		Board test_board = new Board(dif);
 		
 		System.setOut(new PrintStream(outContent));
 		
